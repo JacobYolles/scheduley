@@ -25,7 +25,7 @@ $(document).ready(function() {
     }
   
     // Getting the authors, and their posts
-    getAuthors();
+    getHair();
   
     // A function for handling what happens when the form to create a new post is submitted
     function handleFormSubmit(event) {
@@ -91,8 +91,8 @@ $(document).ready(function() {
     }
   
     // A function to get Authors and then render our list of Authors
-    function getAuthors() {
-      $.get("/api/authors", renderHairList);
+    function getHair() {
+      $.get("/api/hair", renderHairList);
     }
     // Function to either render a list of authors, or if there are none, direct the user to the page
     // to create an author first
