@@ -9,7 +9,7 @@ $(document).ready(function() {
   $(document).on("click", ".delete-author", handleDeleteButtonPress);
 
   // Getting the initial list of Authors
-  getAuthors();
+ getHair();
 
   // A function to handle what happens when the form is submitted to create a new Author
   function handleAuthorFormSubmit(event) {
@@ -33,36 +33,35 @@ $(document).ready(function() {
   }
 
   // Function for creating a new list row for authors
-  function createAuthorRow(authorData) {
-    var newTr = $("<tr>");
-    newTr.data("author", authorData);
-    newTr.append("<td>" + authorData.name + "</td>");
-    newTr.append("<td> " + authorData.Posts.length + "</td>");
-    newTr.append("<td><a href='/blog?author_id=" + authorData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + authorData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
-    return newTr;
-  }
+function createHairRow(hairData) {
+  var newTr = $("<tr>");
+  newTr.data("hair", hairData);
+  newTr.append("<td> " +hairData.service_provided + "</td>");
+  newTr.append("<td> " +hairData.days_provided + "</td>");
+  newTr.append("<td> " +hairData.current_price + "</td>");
+  return newTR
+}
+  
 
   // Function for retrieving authors and getting them ready to be rendered to the page
-  function getAuthors() {
-    $.get("/api/authors", function(data) {
+  function getHair() {
+    $.get("/api/hair", function(data) {
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
-        rowsToAdd.push(createAuthorRow(data[i]));
+        rowsToAdd.push(createHairRow(data[i]));
       }
-      renderAuthorList(rowsToAdd);
+      renderHairList(rowsToAdd);
       nameInput.val("");
     });
   }
 
   // A function for rendering the list of authors to the page
-  function renderAuthorList(rows) {
+  function renderHairList(rows) {
     authorList.children().not(":last").remove();
     authorContainer.children(".alert").remove();
     if (rows.length) {
       console.log(rows);
-      authorList.prepend(rows);
+      hairList.prepend(rows);
     }
     else {
       renderEmpty();
