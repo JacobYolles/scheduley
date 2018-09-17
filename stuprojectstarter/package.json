@@ -26,5 +26,21 @@
     "eslint-plugin-prettier": "^2.6.2",
     "mocha": "^5.2.0",
     "prettier": "^1.13.7"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobYolles/scheduley.git"
+  },
+  "keywords": [
+    "Project",
+    "2"
+  ],
+  "author": "Jake Yolles Brian Field Bryan Yunis",
+  "bugs": {
+    "url": "https://github.com/JacobYolles/scheduley/issues"
+  },
+  "homepage": "https://github.com/JacobYolles/scheduley#readme"
 }
