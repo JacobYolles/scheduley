@@ -57,8 +57,8 @@ function createHairRow(hairData) {
 
   // A function for rendering the list of authors to the page
   function renderHairList(rows) {
-    authorList.children().not(":last").remove();
-    authorContainer.children(".alert").remove();
+    hairList.children().not(":last").remove();
+    hairContainer.children(".alert").remove();
     if (rows.length) {
       console.log(rows);
       hairList.prepend(rows);
