@@ -10,7 +10,11 @@ module.exports = function(sequelize, DataTypes) {
     },   
   current_price: {
     type: DataTypes.INTEGER,
-    allowNull: false
+    allowNull: true
+  },
+  servicing_technician: {
+      type: DataTypes.STRING,
+      allowNull: true
   }
     });
     return Auto;
