@@ -88,4 +88,3 @@ $(document).ready(function() {
       .then(getAuthors);
   }
 });
-
