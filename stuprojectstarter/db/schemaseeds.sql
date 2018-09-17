@@ -3,7 +3,7 @@ CREATE DATABASE services_db;
 USE services_db;
 
 
-CREATE TABLE offer (
+CREATE TABLE hair (
     id INTEGER(11) AUTO_INCREMENT NOT NULL,
     service_provided VARCHAR(100) NOT NULL,
     days_provided VARCHAR(100) NOT NULL,
@@ -11,13 +11,13 @@ CREATE TABLE offer (
     PRIMARY KEY (id)
 );
 
-INSERT INTO offer (service_provided, days_provided, current_price)
+INSERT INTO hair (service_provided, days_provided, current_price)
 VALUES            ("Mens Haircut", "Monday Tuesday Wednesday Thursday Friday", 10.75);
 
-INSERT INTO offer (service_provided, days_provided, current_price)
+INSERT INTO hair (service_provided, days_provided, current_price)
 VALUES            ("Hair Coloring", "Tuesday Thursday", 20.25);
 
-INSERT INTO offer (service_provided, days_provided, current_price)
+INSERT INTO hair (service_provided, days_provided, current_price)
 VALUES            ("Close Shave - Men", "Monday Wednesday Friday", 5.50);
 
 
