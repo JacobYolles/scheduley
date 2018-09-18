@@ -25,9 +25,9 @@ module.exports = function(app) {
 
   
 
-  res.render("confirmation", {
-    hair: dbHairy
-  });
+  // res.render("confirmation", {
+  //   hair: dbHairy
+  // });
   
 
   // Render 404 page for any unmatched routes
