@@ -38,10 +38,4 @@ INSERT INTO repair (service_provided, days_provided, current_price, servicing_te
 VALUES            ("Engine Replacement", "Monday Tuesday Thursday Friday", 250.00, "Brad");
 
 INSERT INTO repair (service_provided, days_provided, current_price)
-<<<<<<< HEAD
-VALUES            ("Inspection", "Monday Friday", 10.00);
-
-
-=======
 VALUES            ("Inspection", "Monday Friday", 10.00);   
->>>>>>> 118dfe6d930c91e3f8eb6b78613a7afe5114ddce

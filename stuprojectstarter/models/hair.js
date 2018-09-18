@@ -12,19 +12,10 @@ current_price: {
   type: DataTypes.INTEGER,
   allowNull: false
 },
-<<<<<<< HEAD
-// createdAt: {
-//   type: sequelize.DATE
-// },
-// updatedAt: {
-//   type: sequelize.DATE
-// },
-=======
 small_bio: {
   type: DataTypes.STRING,
   allowNull: true
 }
->>>>>>> 118dfe6d930c91e3f8eb6b78613a7afe5114ddce
   });
   return Hair;
 };
