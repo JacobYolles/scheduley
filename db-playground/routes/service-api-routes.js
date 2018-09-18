@@ -16,7 +16,10 @@ module.exports = function (app) {
     })
 
     app.get('/all', (req, res) => {
-        db.Day.findAll({}).then((dbDates => {
+        db.Day.findAll({
+            include: [db.Event]
+        }).then((dbDates => {
+            computed.getHours(dbDates);
             res.json(dbDates);
         }))
     })
