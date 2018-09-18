@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Day = sequelize.define("Day", {
-        date: DataTypes.DATE, 
+        date: DataTypes.DATEONLY, 
         event: DataTypes.STRING, 
         start: DataTypes.DATE, 
         end: DataTypes.DATE
