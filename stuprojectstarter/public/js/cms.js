@@ -109,7 +109,7 @@ $(document).ready(function() {
       console.log(rowsToAdd);
       console.log(authorSelect);
       hairSelect.append(rowsToAdd);
-      hairSelect.val(authorId);
+      hairSelect.val(hair.id);
     }
   
     // Creates the author options in the dropdown

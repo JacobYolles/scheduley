@@ -5,19 +5,20 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Hair.findAll({}).then(function(dbhair) {
+    db.Hair.findAll({}).then(function(dbHair) {
       res.render("index", {
         msg: "Welcome!",
-        examples: dbhair
+        hair: dbHair  
       });
     });
   });
 
-  // Load example page and pass in an example by id
+  // Load hair page and pass in an hair product by id
   app.get("/hair/:id", function(req, res) {
-    db.Hair.findOne({ where: { id: req.params.id } }).then(function(dbHair) {
-      res.render("example", {
-        example: dbHair
+    db.Hair.findOne({ where: { id: req.params.id } }).then(function(dbHairs) {
+      // res.render service page.
+      res.render("hairservice", {
+        hair: dbHairs
       });
     });
   });
