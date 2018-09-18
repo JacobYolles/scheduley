@@ -75,6 +75,12 @@ function createHairRow(hairData) {
   // Function for retrieving authors and getting them ready to be rendered to the page
   function getHair() {
     $.get("/api/hair", function(data) {
+      // var hbsObject = {
+      //   hair: data
+      // };
+      // console.log(data);
+      // console.log(hbsObject);
+      // res.render("index", hbsObject);
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         rowsToAdd.push(createHairRow(data[i]));

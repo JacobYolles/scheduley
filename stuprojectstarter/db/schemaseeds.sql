@@ -7,6 +7,7 @@ CREATE TABLE haircuts (
     service_provided VARCHAR(100) NOT NULL,
     days_provided VARCHAR(100) NOT NULL,
     current_price DECIMAL(4, 2) ZEROFILL NOT NULL,
+    createdAt TIMESTAMP default CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 

@@ -7,7 +7,9 @@ module.exports = function(app) {
   
   app.get("/api/hair", function(req, res) {
     db.Hair.findAll({}).then(function(dbHair) {
+      console.log(dbHair);
       res.json(dbHair);
+      
     });
   });
 
