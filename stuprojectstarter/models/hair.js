@@ -11,6 +11,10 @@ service_provided: {
 current_price: {
   type: DataTypes.INTEGER,
   allowNull: false
+},
+small_bio: {
+  type: DataTypes.STRING,
+  allowNull: true
 }
   });
   return Hair;

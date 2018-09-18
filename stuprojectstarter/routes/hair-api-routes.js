@@ -5,11 +5,18 @@ module.exports = function(app) {
   
   
   
-  app.get("/api/hairs", function(req, res) {
+  app.get("/api/hair", function(req, res) {
     db.Hair.findAll({}).then(function(dbHair) {
       res.json(dbHair);
     });
   });
+
+app.get("/api/hair/:id", function(req, res) {
+  db.Hair.findOne({ where: {id: req.params.id} }).then(function(dbHairs) {
+      res.json(dbHairs);
+  })
+})
+  
 
   // Create a new example
   app.post("/api/hair", function(req, res) {
