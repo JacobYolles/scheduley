@@ -1,4 +1,4 @@
-<h3>Services:</h3>
+{{!-- <p class="card-text">Services</p>
         <ul id="hair-list" class="list-group">
           {{#each hair}}
           <li data-id="{{this.id}}" class="list-group-item">
@@ -7,3 +7,25 @@
             </li>
           {{/each}}
           </ul>
+Delete usage of each and find a substitute  --}}
+
+
+ <div class="container">
+  <div class="card">
+    <div class="card-header">
+      Appointment Details:
+    </div>
+    <div class="card-body">
+      <h5 class="card-title cardhead">Please review session details:</h5>
+      <p class="card-text"></p>
+        <ul id="hair-list" class="list-group">
+          {{#each hair}}
+          <li data-id="{{this.id}}" class="list-group-item">
+              <a href="hair/confirmation{{this.id}}">{{this.this.service_provided}}</a>
+            <a href="hair/{{this.id}}">{{this.small_bio}}</a>
+            </li>
+          {{/each}}
+          </ul>
+    </div>
+  </div>
+</div>
