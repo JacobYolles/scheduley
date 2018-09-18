@@ -1,34 +1,22 @@
 {
-  "name": "scheduley",
-  "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "name": "stuprojectstarter",
+  "version": "2.0.0",
+  "description": "Project 2",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "lint": "eslint **/*.js --quiet",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit"
+  "directories": {
+    "test": "test"
   },
-  "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
-    "mysql2": "^1.5.3",
-    "sequelize": "^4.38.0"
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.1"
   },
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "chai-http": "^4.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
-    "mocha": "^5.2.0",
-    "prettier": "^1.13.7"
-  },
-  "directories": {
-    "test": "test"
+  "devDependencies": {},
+  "scripts": {
+    "test": "nodemonserver.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -36,9 +24,17 @@
   },
   "keywords": [
     "Project",
-    "2"
+    "2",
+    "Bryan",
+    "Yunis",
+    "Brian",
+    "Field",
+    "Jake",
+    "Yolles",
+    "Scheduley"
   ],
-  "author": "Jake Yolles Brian Field Bryan Yunis",
+  "author": "Brian Field, Bryan Yunis, Jake Yolles",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/JacobYolles/scheduley/issues"
   },
