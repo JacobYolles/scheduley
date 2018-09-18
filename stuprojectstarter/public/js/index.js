@@ -1,8 +1,8 @@
 $(document).ready(function() {
   // Getting references to the name input and author container, as well as the table body
-  var nameInput = $("#author-name");
-  var authorList = $("tbody");
-  var authorContainer = $(".author-container");
+  var nameInput = $("#hair-name");
+  var hairList = $("tbody");
+  var hairContainer = $(".hair-container");
   // Adding event listeners to the form to create a new object, and the button to delete
   // an Author
   $(document).on("submit", "#author-form", handleAuthorFormSubmit);
@@ -46,6 +46,12 @@ function createHairRow(hairData) {
   // Function for retrieving authors and getting them ready to be rendered to the page
   function getHair() {
     $.get("/api/hair", function(data) {
+      // var hbsObject = {
+      //   hair: data
+      // };
+      // console.log(data);
+      // console.log(hbsObject);
+      // res.render("index", hbsObject);
       var rowsToAdd = [];
       for (var i = 0; i < data.length; i++) {
         rowsToAdd.push(createHairRow(data[i]));

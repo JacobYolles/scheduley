@@ -11,7 +11,13 @@ service_provided: {
 current_price: {
   type: DataTypes.INTEGER,
   allowNull: false
-}
+},
+// createdAt: {
+//   type: sequelize.DATE
+// },
+// updatedAt: {
+//   type: sequelize.DATE
+// },
   });
   return Hair;
 };

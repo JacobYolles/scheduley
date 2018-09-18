@@ -8,6 +8,7 @@ CREATE TABLE hair (
     service_provided VARCHAR(100) NOT NULL,
     days_provided VARCHAR(100) NOT NULL,
     current_price DECIMAL(4, 2) ZEROFILL NOT NULL,
+    createdAt TIMESTAMP default CURRENT_TIMESTAMP,
     PRIMARY KEY (id)
 );
 
@@ -40,3 +41,5 @@ VALUES            ("Engine Replacement", "Monday Tuesday Thursday Friday", 250.0
 
 INSERT INTO repair (service_provided, days_provided, current_price)
 VALUES            ("Inspection", "Monday Friday", 10.00);
+
+

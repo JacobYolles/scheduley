@@ -3,8 +3,11 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all examples
   app.get("/api/hair", function(req, res) {
+    // console.log("jifenufneufbewnbuhy74rhh4r7g4wfe8wfubwfbueiwbcvbeiwbcvbewuvbeiwb");
     db.Hair.findAll({}).then(function(dbHair) {
+      console.log(dbHair);
       res.json(dbHair);
+      
     });
   });
 
