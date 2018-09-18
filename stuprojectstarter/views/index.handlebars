@@ -4,16 +4,22 @@
 
 <h2> Please pick the service you are interested in.</h2>
 
-<span>
-<h1>Scheduley</h1>
-<label>Please Select a Service</label>
-<select name='service' id ='service-select'>
-    <option></option>
-    {{#each services}}
-    <option value='{{name}}'>{{name}}</option>
-    {{/each}} 
- </select>
-<label for='date-input'>Please select a date:</label>
-<input type='text' name='date-input' id='date-input' />
-<button id='submit-date'>Submit</button>
-</span>
+{{!-- <strong>ID</strong>: {{hair.id}}</p>
+<strong>Service Provided</strong>: {{Hair.service_provided}}</p>
+<ul>
+    {{#each hair}}
+    {{> hair/hair-block}}
+    {{/each}}
+
+</ul> --}}
+
+<h3>Services:</h3>
+        <ul id="hair-list" class="list-group">
+          {{#each hair}}
+          <li data-id="{{this.id}}" class="list-group-item">
+            <a href="hair/{{this.id}}">{{this.service_provided}}</a>
+            
+              <a href="hair/{{this.id}}">{{this.days_provided}}</a>
+            </li>
+          {{/each}}
+          </ul>

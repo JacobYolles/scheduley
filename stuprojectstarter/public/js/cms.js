@@ -90,27 +90,27 @@
 //       });
 //     }
   
-//     // A function to get Authors and then render our list of Authors
-//     function getHair() {
-//       $.get("/api/hair", renderHairList);
-//     }
-//     // Function to either render a list of authors, or if there are none, direct the user to the page
-//     // to create an author first
-//     function renderHairList(data) {
-//       if (!data.length) {
-//         window.location.href = "/hair";
-//       }
-//       $(".hidden").removeClass("hidden");
-//       var rowsToAdd = [];
-//       for (var i = 0; i < data.length; i++) {
-//         rowsToAdd.push(createHairRow(data[i]));
-//       }
-//       hairSelect.empty();
-//       console.log(rowsToAdd);
-//       console.log(authorSelect);
-//       hairSelect.append(rowsToAdd);
-//       hairSelect.val(authorId);
-//     }
+    // A function to get Authors and then render our list of Authors
+    function getHair() {
+      $.get("/api/hair", renderHairList);
+    }
+    // Function to either render a list of authors, or if there are none, direct the user to the page
+    // to create an author first
+    function renderHairList(data) {
+      if (!data.length) {
+        window.location.href = "/hair";
+      }
+      $(".hidden").removeClass("hidden");
+      var rowsToAdd = [];
+      for (var i = 0; i < data.length; i++) {
+        rowsToAdd.push(createHairRow(data[i]));
+      }
+      hairSelect.empty();
+      console.log(rowsToAdd);
+      console.log(authorSelect);
+      hairSelect.append(rowsToAdd);
+      hairSelect.val(hair.id);
+    }
   
 //     // Creates the author options in the dropdown
 //     function createAuthorRow(author) {
