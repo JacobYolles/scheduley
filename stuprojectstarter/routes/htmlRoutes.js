@@ -8,6 +8,7 @@ module.exports = function(app) {
     db.Hair.findAll({}).then(function(dbHair) {
       res.render("index", {
         msg: "Welcome!",
+        
         hair: dbHair  
       });
     });
@@ -21,6 +22,10 @@ module.exports = function(app) {
         hair: dbHairs
       });
     });
+  });
+
+  res.render("confirmation", {
+    hair: dbHairy
   });
 
   // Render 404 page for any unmatched routes

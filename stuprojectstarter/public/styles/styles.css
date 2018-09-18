@@ -1,8 +1,8 @@
 .list-group-item {
   line-height: 2.5;
 }
-.cardHead {
-  color: #588d8a;
+.card-header {
+  background-color: #d78544;
 }
 .card {
   background-color: #75afad;
