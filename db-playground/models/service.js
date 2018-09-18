@@ -11,8 +11,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER,
             allowNull: true, 
         },
-        startWindow: DataTypes.DATE, 
-        endWindow: DataTypes.DATE,
         duration: DataTypes.INTEGER
     })
     Service.associate = function(models) {
