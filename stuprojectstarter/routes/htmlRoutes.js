@@ -7,8 +7,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Hair.findAll({}).then(function(dbHair) {
       res.render("index", {
-        msg: "Welcome!",
-        
+        msg: "Welcome to Scheduley!",
         hair: dbHair  
       });
     });
@@ -25,9 +24,12 @@ module.exports = function(app) {
     });
   });
 
+  
+
   // res.render("confirmation", {
   //   hair: dbHairy
   // });
+  
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

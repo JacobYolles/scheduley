@@ -1,5 +1,5 @@
 let express = require('express');
-let db = require('./models');
+let db = require("../models");
 let exphbs = require('express-handlebars');
 
 let PORT = process.env.PORT || 3000;
