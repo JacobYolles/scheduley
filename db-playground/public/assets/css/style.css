@@ -128,6 +128,7 @@
 	font-size: 0;
 }
 
+<<<<<<< HEAD
 /* Hair css */
 
 
@@ -172,3 +173,8 @@ html,body{
 	margin-left: 7px;
   }
   
+=======
+ul {
+    list-style: none;
+}
+>>>>>>> 968594e60fe062f52ab9837b10b47a7ac9d2ac3d

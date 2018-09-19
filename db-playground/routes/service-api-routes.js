@@ -1,6 +1,8 @@
 let db = require('../models');
 let moment = require('moment');
 let computed = require('../computed/computed');
+let store = require('../store/store');
+
 
 module.exports = function (app) {
     app.get('/api/:date', (req, res) => {
@@ -21,36 +23,50 @@ module.exports = function (app) {
         }).then((dbDates => {
             computed.getHours(dbDates);
             res.json(dbDates);
+            let timeslots = store.getters.getTimeslots();
+            console.log('get', timeslots)
         }))
     })
 
-    app.get('/services', (req, res) => {
+    app.get('/', (req, res) => {
         db.Service.findAll({})
-        .then((services => {
-            res.render('index', {services})
+            .then((services => {
+                res.render('index', { services })
+            }))
+        db.Day.findAll({
+            include: [db.Event]
+        }).then((dbDates => {
+            computed.getHours(dbDates);
         }))
+
     })
 
     app.get('/available', (req, res) => {
-        db.Days.findAll({}).then(data => {
-            computed.hours(data);
+        db.Day.findAll({}).then(data => {
 
         })
     })
 
     app.get('/services/:service', (req, res) => {
         let serviceSelected = req.params.service;
-        db.Day.findAll({
+        console.log('servicesel', serviceSelected)
+        db.Service.findOne({
             where: {
-                event: serviceSelected
-            }
+                name: serviceSelected
+            }, 
+            include: [db.Event]
         }).then(service => {
-            db.Service.findOne({
-                where: {
-                    name: service.event
-                }
-            })
-            res.json(service)
+            let timeslots = store.getters.getTimeslots();
+            let availableTimes = computed.compareSchedules(timeslots, service)
+            console.log('availabletimes', availableTimes);
+            res.send(availableTimes);
+        })
+    })
+    app.get('/services', (req, res) => {
+        db.Service.findAll({
+            include: [db.Event]
+        }).then(data => {
+            res.json(data);
         })
     })
 }

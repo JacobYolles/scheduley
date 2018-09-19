@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
         duration: DataTypes.INTEGER
     })
     Service.associate = function(models) {
-        Service.hasMany(models.Blackout, {
+        Service.hasMany(models.Event, {
             onDelete: 'cascade',
             })
         }

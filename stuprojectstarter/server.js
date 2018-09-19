@@ -23,7 +23,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// Routes
+//  Hair Routes
 require("./routes/auto-api-routes")(app);
 require("./routes/hair-api-routes")(app);
 require("./routes/htmlRoutes")(app);
