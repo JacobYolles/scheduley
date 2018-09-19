@@ -127,3 +127,7 @@
 	width: 100%;
 	font-size: 0;
 }
+
+ul {
+    list-style: none;
+}

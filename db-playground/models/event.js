@@ -13,6 +13,11 @@ module.exports = function (sequelize, DataTypes) {
                 allowNull: false
             }
         });
+        Event.belongsTo(models.Service, {
+            foreignKey: {
+                allowNull: true
+            }
+        })
     }
 
     return Event;

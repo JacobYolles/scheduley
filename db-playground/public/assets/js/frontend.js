@@ -9,9 +9,19 @@ $(function () {
             console.log(JSON.stringify(data));
         }))
     })
-    $('#service-select').change(function() {
-        let serviceSelected = $('#service-select').val();
-        $.get('/services/' + serviceSelected)
-        console.log($('#service-select').val());
+    $('.service-select').on('click', function() { 
+        let serviceSelected = $(this).attr('data-name');
+        
+        
+        $.get('/services/' + serviceSelected, (data => {
+            let timesList = $("<ul>");
+            $('#available-times').append('<h3>' + 'Available Times' + '</h3>');
+            data.forEach(item => {
+                let newTime = $("<li>").append(item);
+                timesList.append(newTime);
+            })
+            $('#available-times').append(timesList);
+            console.log(data);
+        }))
     })
 })
