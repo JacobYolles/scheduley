@@ -1,5 +1,6 @@
 let moment = require('moment-timezone');
-moment.tz('Z');
+let store = require('../store/store');
+
 
 let computed = {
     week: function () {
@@ -16,7 +17,7 @@ let computed = {
     },
     getHours: function (datesObject) {
         let week = this.week();
-        let timesHours = [];
+        let hours = [];
         week.forEach(weekday => {
             datesObject.forEach(day => {
                 if (weekday === day.day) {
@@ -25,9 +26,9 @@ let computed = {
                             let day = event.DayDay;
                             let openTime = event.start;
                             let closeTime = event.end;
-                            timesHours.push({
+                            hours.push({
                                 day: day,
-                                open: openTime, 
+                                open: openTime,
                                 close: closeTime
                             })
                         }
@@ -35,15 +36,46 @@ let computed = {
                 }
             })
         })
-        this.getAvailable(timesHours)
+        let timeslots = this.getAvailable(hours)
+        store.mutations.setTimeslots(timeslots);
     },
-    getAvailable: function(hours) {
-        let dayOne = hours[0];
-        let open = dayOne.open;
-        let close = dayOne.close;
-        console.log("OPEN", moment.tz(open));
+    getAvailable: function (hours) {
+        let timeslots = [];
+        hours.forEach(day => {
+            let timeslot = moment.tz(day.open, 'utc');
+            let close = moment.tz(day.close, 'utc');
+            while (timeslot.isBefore(close)) {
+                timeslots.push(timeslot);
+                timeslot = moment(timeslot);
+                timeslot.add(30, 'm');
+            }
+        })
+        return timeslots;
+    },
+    compareSchedules(timeslots, service) {
+        let serviceDuration = service.duration;
+        let slots = store.getters.getTimeslots();
+        // console.log('slots before', slots)
+        let availableTimes = [];
+
+
+        timeslots.forEach((time, index) => {
+            let timeStart = time.clone();
+            let timeEnd = time.clone();
+            moment.tz(timeEnd.add(serviceDuration, 'm'), 'utc');
+            service.Events.forEach(event => {
+                let eventStart = moment.tz(event.start, 'utc');
+                let eventEnd = moment.tz(event.end, 'utc');
+                if (timeStart.isBetween(eventStart, eventEnd) ||
+                    timeEnd.isBetween(eventStart, eventEnd) ||
+                    timeStart.isSame(eventStart)) {
+                    console.log('conflict!', timeStart, index)
+                }
+                else availableTimes.push(moment(timeStart).format('dddd, MMMM Do, h:mm a'));
+            })
+        })
+        return availableTimes;
     }
 }
 
-computed.week();
 module.exports = computed;
