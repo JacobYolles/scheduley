@@ -16,7 +16,12 @@ app.set('view engine', 'handlebars');
 //require routes
 require('./routes/service-api-routes')(app);
 
-db.sequelize.sync({ force: false }).then(function() {
+//Hair Routes
+require("./routes/auto-api-routes")(app);
+require("./routes/hair-api-routes")(app);
+require("./routes/htmlRoutes")(app);
+
+db.sequelize.sync({ force: true }).then(function() {
     app.listen(PORT, function() {
         console.log('listening on port %s', PORT);
     })
