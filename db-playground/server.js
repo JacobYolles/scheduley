@@ -1,5 +1,5 @@
 let express = require('express');
-let db = require("../models");
+let db = require('./models');
 let exphbs = require('express-handlebars');
 
 let PORT = process.env.PORT || 3000;
@@ -16,7 +16,13 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //require routes
+
+require("./routes/client-hair-api-routes")(app)
+require("./routes/auto-api-routes")(app);
+require("./routes/hair-api-routes")(app);
+require("./routes/htmlRoutes")(app);
 require('./routes/service-api-routes')(app);
+
 
 db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
