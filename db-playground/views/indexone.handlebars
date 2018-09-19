@@ -1,0 +1,39 @@
+{{!-- Customer side --}}
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Scheduling!
+    </div>
+    <div class="card-body">
+      <h5 class="card-title cardhead">Please pick the service you are interested in.</h5>
+      <p class="card-text">Services:</p>
+      <ul id="hair-list" class="list-group">
+        {{#each hair}}
+        <li data-id="{{this.id}}" class="list-group-item">
+          <a href="hair/{{this.id}}">{{this.service_provided}}</a>
+
+          <a href="hair/{{this.id}}">{{this.days_provided}}</a>
+        </li>
+        {{/each}}
+      </ul>
+  
+    </div>
+  </div>
+</div>
+  
+
+    
+
+
+    {{!-- <strong>ID</strong>: {{hair.id}}</p>
+    <strong>Service Provided</strong>: {{Hair.service_provided}}</p>
+    <ul>
+      {{#each hair}}
+      {{> hair/hair-block}}
+      {{/each}}
+
+    </ul> --}}
+
+   

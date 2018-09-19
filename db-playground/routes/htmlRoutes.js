@@ -1,4 +1,4 @@
-var db = require("../models");
+let db = require("../models");
 
 
 
@@ -6,9 +6,17 @@ module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
     db.Hair.findAll({}).then(function(dbHair) {
-      res.render("index", {
-        msg: "Welcome!",
-        
+      res.render("indexone", {
+        msg: "Welcome to Scheduley!",
+        hair: dbHair  
+      });
+    });
+  });
+
+  app.get("/client", function(req, res) {
+    db.Hair.findAll({}).then(function(dbHair) {
+      res.render("client", {
+        msg: "Welcome to the Client side!",
         hair: dbHair  
       });
     });
@@ -19,15 +27,17 @@ module.exports = function(app) {
     db.Hair.findOne({ where: { id: req.params.id } }).then(function(dbHairs) {
       // res.render service page.
       res.render("hairservice", {
-        
         hair: dbHairs
       });
     });
   });
 
+  
+
   // res.render("confirmation", {
   //   hair: dbHairy
   // });
+  
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

@@ -20,12 +20,12 @@ app.get("/api/hair/:id", function(req, res) {
 })
   
 
-  // Create a new example
-  app.post("/api/hair", function(req, res) {
-    db.Hair.create(req.body).then(function(dbHairs) {
-      res.json(dbHairs);
-    });
-  });
+  // // Create a new example
+  // app.post("/api/hair", function(req, res) {
+  //   db.Hair.create(req.body).then(function(dbHairs) {
+  //     res.json(dbHairs);
+  //   });
+  // });
 
   // Delete an example by id
   app.delete("/api/hair/:id", function(req, res) {

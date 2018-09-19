@@ -15,6 +15,7 @@
     <div class="card-body">
       <h5 class="card-title cardHead">Please review session details:</h5>
       <p class="card-text"></p>
+<<<<<<< HEAD
       <ul id="hair-list" class="list-group">
         {{#each hair}}
         <li data-id="{{this.id}}" class="list-group-item">
@@ -24,6 +25,17 @@
         </li>
         {{/each}}
       </ul>
+=======
+        <ul id="hair-list" class="list-group">
+          {{#each hair}}
+          <li data-id="{{this.id}}" class="list-group-item">
+              <a href="hair/{{this.id}}">{{this.service_provided}}</a>
+            <a href="hair/{{this.id}}">{{this.small_bio}}</a>
+            <a href="hair/{{this.id}}">{{this.current_price}}</a>
+            </li>
+          {{/each}}
+          </ul>
+>>>>>>> 7296f799de8f3990f76b88696091eeb27f80092c
     </div>
   </div>
 </div>

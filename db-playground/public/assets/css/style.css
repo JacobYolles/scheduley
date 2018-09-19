@@ -94,7 +94,6 @@
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
 	float: left;
 }
-
 /* with multiple calendars */
 .ui-datepicker.ui-datepicker-multi {
 	width: auto;
@@ -127,48 +126,40 @@
 	width: 100%;
 	font-size: 0;
 }
-
-/* Hair css */
-
-
-
-
-html,body{
-	height: 100%
-  }
-  
-  .list-group-item {
+ul {
+	list-style: none;
+}
+/*  */
+.list-group-item {
 	line-height: 2.5;
-  }
-  .card-header {
-	color: white;
-	background-color: #558C89;
-  }
-  .card {
+}
+.card-header {
+	background-color:yellowgreen;
+}
+
+
+.card-headertwo {
+	background-color:yellowgreen;
+}
+
+.card {
 	background-color: #75afad;
-	
-  }
-  
-  .list-group-item {
+}
+
+.card-title cardhead {
+	background-color: cadetblue
+}
+#Brian {
+	color: lightseagreen;
+}
+
+body {
 	background-color: #f0f0ee;
-  }
-  
-  body {
+}
+/* .container {
 	background-color: #f0f0ee;
-  }
-  .card-title {
-	color: white;
-  }
-  .card-text {
-	color: white;
-  }
-  
-  .list-group-item {
-	color:	#808080;
-  }
-  
-  .linkSpace {
-	margin-right: 7px;
-	margin-left: 7px;
-  }
-  
+} */
+
+
+
+
