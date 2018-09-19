@@ -7,7 +7,7 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     db.Hair.findAll({}).then(function(dbHair) {
       res.render("index", {
-        msg: "Thank you for using Scheduley!",
+        msg: "Welcome to Scheduley!",
         hair: dbHair  
       });
     });

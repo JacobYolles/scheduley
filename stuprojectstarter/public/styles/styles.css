@@ -4,10 +4,19 @@
 .card-header {
   background-color:yellowgreen;
 }
+
+
+.card-headertwo {
+  background-color:yellowgreen;
+}
+
 .card {
   background-color: #75afad;
 }
 
+.card-title cardhead {
+  background-color: cadetblue
+}
 #Brian {
   color: lightseagreen;
 }
