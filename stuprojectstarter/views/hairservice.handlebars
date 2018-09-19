@@ -23,8 +23,9 @@ Delete usage of each and find a substitute  --}}
         <ul id="hair-list" class="list-group">
           {{#each hair}}
           <li data-id="{{this.id}}" class="list-group-item">
-              <a href="hair/confirmation{{this.id}}">{{this.this.service_provided}}</a>
+              <a href="hair/{{this.id}}">{{this.service_provided}}</a>
             <a href="hair/{{this.id}}">{{this.small_bio}}</a>
+            <a href="hair/{{this.id}}">{{this.current_price}}</a>
             </li>
           {{/each}}
           </ul>
