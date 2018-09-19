@@ -8,6 +8,8 @@ let bodyParser = require('body-parser');
 let app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'));
+app.use(express.static('computed'));
+app.use(express.static('store'));
 app.use(bodyParser.json());
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
