@@ -131,3 +131,36 @@
 ul {
     list-style: none;
 }
+
+/*  */
+
+.list-group-item {
+	line-height: 2.5;
+  }
+  .card-header {
+	background-color:yellowgreen;
+  }
+  
+  
+  .card-headertwo {
+	background-color:yellowgreen;
+  }
+  
+  .card {
+	background-color: #75afad;
+  }
+  
+  .card-title cardhead {
+	background-color: cadetblue
+  }
+  #Brian {
+	color: lightseagreen;
+  }
+  
+  body {
+	background-color: #f0f0ee;
+  }
+  /* .container {
+	background-color: #f0f0ee;
+  } */
+  
