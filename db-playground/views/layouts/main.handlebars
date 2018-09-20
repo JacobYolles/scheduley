@@ -1,23 +1,48 @@
 <!DOCTYPE html>
 <html lang='en'>
-    <head>
-        <meta charset='UTF-8'>
-        <title>Scheduley</title>
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="/assets/js/frontend.js"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js'></script>
-        <link rel = 'stylesheet' href= 'https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' type='text/css' />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-    </head>
-    {{msg}}
-    <body>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Scheduley</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/assets/js/frontend.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js'></script>
+    <link rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css' type='text/css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+</head>
+
+
+<body>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 id="heroText">Scheduley</h1>
+        </div>
+    </div>
+    <div class="container">
         {{{ body }}}
-        <script src = "/assets/js/client.js">
+        <script src="/assets/js/client.js">
+
+
+
         </script>
-    </body>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright: Scheduley
+            
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+</body>
 
 
 </html>
