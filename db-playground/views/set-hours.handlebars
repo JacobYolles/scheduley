@@ -1,0 +1,80 @@
+<h1>Set hours for your business</h1>
+
+<ul>
+    <li>
+        <p>Monday</p>
+        <select>
+            {{#each hours}}
+            <option value='mon-open-{{hour}}'>{{hour}}</option>
+        </select>
+        {{#each hours}}
+        <option value='mon-close-{{hour}}'>{{hour}}</option>
+        </select>
+    </li>
+    <li>
+        <p>Tuesday</p>
+        <select>
+            {{#each hours}}
+            <option value='tue-open-{{hour}}'>{{hour}}</option>
+        </select>
+        <select>
+            {{#each hours}}
+            <option value='tue-close-{{hour}}'>{{hour}}</option>
+        </select>
+    </li>
+    <li>
+        <p>Wednesday</p>
+        <select>
+            {{#each hours}}
+            <option value='wed-open-{{hour}}'>{{hour}}</option>
+        </select>
+        <select>
+            {{#each hours}}
+            <option value='wed-close-{{hour}}'>{{hour}}</option>
+        </select>
+    </li>
+    <li>
+        <p>Thursday</p>
+        <select>
+            {{#each hours}}
+            <option value='thu-open-{{hour}}'>{{hour}}</option>
+        </select>
+        <select>
+            {{#each hours}}
+            <option value='thu-close-{{hour}}'>{{hour}}</option>
+        </select>
+    </li>
+    <li>
+        <p>Friday</p>
+        <select>
+            {{#each hours}}
+            <option value='fri-open-{{hour}}'>{{hour}}</option>
+        </select>
+        <select>
+            {{#each hours}}
+            <option value='fri-close-{{hour}}'>{{hour}}</option>
+        </select>
+    </li>
+    <li>
+        <p>Saturday</p>
+        <select>
+            {{#each hours}}
+            <option value='sat-open-{{hour}}'>{{hour}}</option>
+        </select>
+    <select>
+        {{#each hours}}
+        <option value='sat-close-{{hour}}'>{{hour}}</option>
+    </select>
+    </li>
+    <li>
+        <p>Sunday</p>
+    <select>
+        {{#each hours}}
+        <option value='sun-open-{{hour}}'>{{hour}}</option>
+    </select>
+    <select>
+        {{#each hours}}
+        <option value='sun-close-{{hour}}'>{{hour}}</option>
+    </select>
+    </li>
+</ul>

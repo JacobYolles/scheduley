@@ -37,6 +37,7 @@ module.exports = function (app) {
             include: [db.Event]
         }).then((dbDates => {
             computed.getHours(dbDates);
+            console.log('getting hours')
         }))
 
     })
