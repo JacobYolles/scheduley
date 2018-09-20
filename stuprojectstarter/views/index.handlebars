@@ -7,14 +7,13 @@
       Scheduling!
     </div>
     <div class="card-body">
-      <h5 class="card-title cardhead">Please pick the service you are interested in.</h5>
+      <h5 class="card-title cardHead">Please pick the service you are interested in.</h5>
       <p class="card-text">Services:</p>
       <ul id="hair-list" class="list-group">
         {{#each hair}}
         <li data-id="{{this.id}}" class="list-group-item">
-          <a href="hair/{{this.id}}">{{this.service_provided}}</a>
-
-          <a href="hair/{{this.id}}">{{this.days_provided}}</a>
+          <a href="hair/{{this.id}}"><span class = "linkSpace">{{this.service_provided}}:</span></a>  
+          <a href="hair/{{this.id}}"><span class = "linkDaySpace">{{this.days_provided}}</span></a>
         </li>
         {{/each}}
       </ul>
@@ -23,7 +22,7 @@
   </div>
 </div>
   
-
+   
     
 
 

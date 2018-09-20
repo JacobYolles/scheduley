@@ -94,7 +94,6 @@
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
 	float: left;
 }
-
 /* with multiple calendars */
 .ui-datepicker.ui-datepicker-multi {
 	width: auto;
@@ -127,40 +126,172 @@
 	width: 100%;
 	font-size: 0;
 }
-
 ul {
-    list-style: none;
+	list-style: none;
+}
+/*  */
+
+tr.spaceUnder>td {
+  padding-bottom: 1em;
 }
 
-/*  */
+td {
+	color: white;
+}
+
+tr.spaceUnderMore>td {
+	padding-bottom: 5em;
+}
 
 .list-group-item {
 	line-height: 2.5;
-  }
+}
+html,body {
+	height: 100%;
+	min-width: 330px;
+	}
+	
+	body {
+		font-family: 'Montserrat', sans-serif; 
+		font-weight:200;
+	}
+	
+.h3Head {
+	font-family: 'Montserrat', sans-serif; 
+	font-weight:200;
+}
+
+
+	h1, h2, h3 {
+		font-family: 'Montserrat', sans-serif; 
+		font-weight:700;
+	}
+  
+  .list-group-item {
+	line-height: 2.5;
+	}
+	
+.cardhead {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+}
+
   .card-header {
-	background-color:yellowgreen;
+	color: white;
+	/* background-color: #558C89; */
+	background-color: #3280ba;
   }
-  
-  
-  .card-headertwo {
-	background-color:yellowgreen;
-  }
-  
   .card {
-	background-color: #75afad;
+	/* background-color: #75afad; */
+	background-color: #9ab9d7;
+	min-height: 362px;
+	/* margin: 0 auto; 
+  float: none; 
+	margin-bottom: 10px;  */
+	
   }
   
-  .card-title cardhead {
-	background-color: cadetblue
-  }
-  #Brian {
-	color: lightseagreen;
+  .list-group-item {
+	background-color: #f0f0ee;
   }
   
   body {
 	background-color: #f0f0ee;
   }
-  /* .container {
-	background-color: #f0f0ee;
-  } */
+  .card-title {
+	color: white;
+	/* color: #3280ba; */
+  }
+  .card-text {
+	color: white;
+	/* color: #3280ba; */
+  }
   
+  .list-group-item {
+	color:  #808080;
+  }
+  
+  .linkSpace {
+	margin-right: 7px;
+	margin-left: 7px;
+	}
+	
+	.conf {
+		font-size: 26px;
+		padding-bottom: 50px; 
+		text-align: center;
+	}  
+	
+	.hero-image {
+		margin-bottom: 3em;
+		/* background-image:  url("hero calimag5.jpeg"); */
+		/* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero\ calimag11.jpg"); */
+		background-image: url("hero calimag11.jpg");
+		 /* Set a specific height */
+		 height: 50%;
+		 vertical-align: bottom; padding-bottom: 10%;
+		 /* Position and center the image to scale nicely on all screens */
+		 /* background-position: center; */
+		 background-position: center bottom;
+		 background-repeat: no-repeat;
+		 background-size: cover;
+		 position: relative;
+	}
+	/* font-family: 'Montserrat', sans-serif; */
+	#heroText {
+		font-family: 'Montserrat', sans-serif; 
+		font-weight:200;
+		font-size: 8em;
+		text-align: center;
+		position: absolute;
+		padding-bottom: 2em;
+		/* padding-left: 5%; */
+    top: 50%;
+    left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		/* color: yellow; */
+		/* color: black; */
+		/* color: #575F6B; */
+		/* color: #e9b78d; */
+		/* color: #9bbcdf; */
+		/* color: #508fc8; */
+		/* color: #3280ba; */
+	}
+
+
+	/* .py-3 {
+    padding-bottom: 0rem!important;
+} */
+
+	.page-footer {
+		margin-top: 3em;
+		height: 6%;
+		background-color: #3280ba;
+		color: white;
+		padding-top: 5px;
+	}
+
+	
+
+	.flex-container {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+			align-items: center;
+			justify-content: center;
+	
+	}
+	
+	row{
+		width: 100%;
+	}
+	
+	

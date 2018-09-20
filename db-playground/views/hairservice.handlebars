@@ -1,15 +1,15 @@
-{{!-- <p class="card-text">Services</p>
-        <ul id="hair-list" class="list-group">
-          {{#each hair}}
-          <li data-id="{{this.id}}" class="list-group-item">
-              <a href="hair/{{this.id}}">{{this.this.service_provided}}</a>
-            <a href="hair/{{this.id}}">{{this.small_bio}}</a>
-            </li>
-          {{/each}}
-          </ul>
-Delete usage of each and find a substitute  --}}
+{{!-- <ul id="hair-list" class="list-group">
+  {{#each hair}}
+  <li data-id="{{this.id}}" class="list-group-item">
+    <a href="hair/{{this.id}}">{{this.this.service_provided}}</a>
+    <a href="hair/{{this.id}}">{{this.small_bio}}</a>
+  </li>
+  {{/each}}
+</ul>
+Delete usage of each and find a substitute --}}
 
 
+<<<<<<< HEAD
  <div class="container">
   <div class="card">
     <div class="card-header">
@@ -23,13 +23,39 @@ Delete usage of each and find a substitute  --}}
         <ul id="hair-list" class="list-group">
           {{#hair}}
           <li data-id="{{this.id}}" class="list-group-item">
+=======
+<div class="flex-container">
+  <div class="row">
+    <span class="flex-item"><div class="container2">
+      {{!-- <h3>Services:</h3> --}}
+      <div class="card" style="width: 40rem; height: auto;">
+        <div class="card-header">
+          <div id="card-header-two">
+            <h3 class="h3Head">Appointment Details:</h3>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title cardhead">Please review session details:</h5>
+          <p class="card-text"></p>
+          <ul id="hair-list" class="list-group">
+            {{#each hair}}
+            {{#if this.id}}
+            <li data-id="{{this.id}}" class="list-group-item">
+>>>>>>> a967217969ef6f634d04b1b2a3230ff8dfe5e217
               <a href="hair/{{this.id}}">{{this.service_provided}}</a>
-            <a href="hair/{{this.id}}">{{this.small_bio}}</a>
-            <a href="hair/{{this.id}}">{{this.current_price}}</a>
+              <a href="hair/{{this.id}}">{{this.small_bio}}</a>
+              <a href="hair/{{this.id}}">{{this.current_price}}</a>
             </li>
+<<<<<<< HEAD
         {{/hair}}
+=======
+            {{/if}}
+            {{/each}}
+>>>>>>> a967217969ef6f634d04b1b2a3230ff8dfe5e217
           </ul>
+        </div>
+      </div>
     </div>
+    </span>
   </div>
 </div>
-
