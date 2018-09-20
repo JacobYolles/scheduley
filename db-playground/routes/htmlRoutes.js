@@ -13,6 +13,8 @@ module.exports = function(app) {
     });
   });
 
+  
+
   app.get("/client", function(req, res) {
     db.Hair.findAll({}).then(function(dbHair) {
       res.render("client", {
