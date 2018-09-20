@@ -16,13 +16,14 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 //require routes
+
 require('./routes/service-api-routes')(app);
-require('./routes/customer-api-routes')(app);
 require("./routes/client-hair-api-routes")(app)
+require("./routes/client-api-routes")(app);
 require("./routes/auto-api-routes")(app);
 require("./routes/hair-api-routes")(app);
 require("./routes/htmlRoutes")(app);
-
+require('./routes/customer-api-routes')(app);
 
 
 db.sequelize.sync({ force: false }).then(function() {

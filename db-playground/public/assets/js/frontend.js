@@ -65,6 +65,7 @@ $(function () {
             let comment = commentField.val().trim();
             postCustomer(name, phone, comment);
             postAppointment(serviceSelected, timeSelected);
+            console.log('end of time select');
         })
     })
 
