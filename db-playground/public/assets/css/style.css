@@ -184,9 +184,9 @@ html,body{
   .card {
 	/* background-color: #75afad; */
 	background-color: #9ab9d7;
-	margin: 0 auto; 
-  float: none; /* Added */
-	margin-bottom: 10px; /* Added */
+	/* margin: 0 auto; 
+  float: none; 
+	margin-bottom: 10px;  */
 	
   }
   
@@ -261,8 +261,31 @@ html,body{
 
 	.page-footer {
 		margin-top: 5em;
-		height: 5%;
+		height: 6%;
 		background-color: #3280ba;
 		color: white;
+		padding-top: 5px;
 	}
 
+	@import "compass/css3";
+
+	.flex-container {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+			align-items: center;
+			justify-content: center;
+	
+	}
+	
+	row{
+		width: 100%;
+	}
+	
+	
