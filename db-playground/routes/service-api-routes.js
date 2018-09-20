@@ -39,7 +39,7 @@ module.exports = function (app) {
             computed.getHours(dbDates);
             console.log('getting hours')
         }))
-
+    
     })
 
     app.get('/available', (req, res) => {
