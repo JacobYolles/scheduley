@@ -26,10 +26,10 @@ CREATE TABLE hairs (
 );
 
 INSERT INTO hairs (service_provided, days_provided, current_price, small_bio)
-VALUES            ("Mens Haircut", "Monday Tuesday Wednesday Thursday Friday", 10.75, "Get a relaxing haircut courtesy of Juan.");
+VALUES            ("Mens Haircut", "Monday, Tuesday, Wednesday, Thursday, Friday", 10.75, "Get a relaxing haircut courtesy of Juan.");
 
 INSERT INTO hairs (service_provided, days_provided, current_price, small_bio)
-VALUES            ("Hair Coloring", "Tuesday Thursday", 20.25, "Get that look you always wanted, courtesy of Alexa.");
+VALUES            ("Hair Coloring", "Tuesday, Thursday", 20.25, "Get that look you always wanted, courtesy of Alexa.");
 
 INSERT INTO hairs (service_provided, days_provided, current_price, small_bio)
-VALUES            ("Close Shave - Men", "Monday Wednesday Friday", 5.50, "Get that look of amazement on your lovers face, courtesy of Narmada");
+VALUES            ("Close Shave - Men", "Monday, Wednesday, Friday", 5.50, "Get that look of amazement on your lovers face, courtesy of Narmada");
