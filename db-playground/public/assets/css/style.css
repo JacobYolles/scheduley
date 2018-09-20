@@ -186,11 +186,16 @@ html,body {
 	/* background-color: #75afad; */
 	background-color: #9ab9d7;
 	min-height: 362px;
+	height: auto;
 	/* margin: 0 auto; 
   float: none; 
 	margin-bottom: 10px;  */
+	}
 	
-  }
+	div.card-body {
+		height: auto;
+		background-color: #9ab9d7;
+	}
   
   .list-group-item {
 	background-color: #f0f0ee;
