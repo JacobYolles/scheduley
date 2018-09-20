@@ -146,8 +146,9 @@ tr.spaceUnderMore>td {
 .list-group-item {
 	line-height: 2.5;
 }
-html,body{
-	height: 100%
+html,body {
+	height: 100%;
+	min-width: 330px;
 	}
 	
 	body {
