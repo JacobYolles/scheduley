@@ -15,6 +15,7 @@ $("#submit-data").on("click",function (event) {
     data: data
   }).then(function () {
     alert("Posted values")
+    location.reload()
   })
 
 })
