@@ -22,6 +22,7 @@ require("./routes/auto-api-routes")(app);
 require("./routes/hair-api-routes")(app);
 require("./routes/htmlRoutes")(app);
 require('./routes/service-api-routes')(app);
+require('./routes/customer-api-routes')(app);
 
 
 db.sequelize.sync({ force: false }).then(function() {
