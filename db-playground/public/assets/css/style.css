@@ -224,7 +224,7 @@ html,body {
 	}  
 	
 	.hero-image {
-		margin-bottom: 5em;
+		margin-bottom: 3em;
 		/* background-image:  url("hero calimag5.jpeg"); */
 		/* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero\ calimag11.jpg"); */
 		background-image: url("hero calimag11.jpg");
@@ -266,14 +266,14 @@ html,body {
 } */
 
 	.page-footer {
-		margin-top: 5em;
+		margin-top: 3em;
 		height: 6%;
 		background-color: #3280ba;
 		color: white;
 		padding-top: 5px;
 	}
 
-	@import "compass/css3";
+	
 
 	.flex-container {
 		padding: 0;
