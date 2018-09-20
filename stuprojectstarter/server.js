@@ -12,6 +12,7 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
+// app.use(express.static(path.join(__dirname, '/public')));
 
 // Handlebars
 app.engine(
@@ -22,7 +23,7 @@ app.engine(
 );
 app.set("view engine", "handlebars");
 
-// Routes
+//  Hair Routes
 require("./routes/auto-api-routes")(app);
 require("./routes/hair-api-routes")(app);
 require("./routes/htmlRoutes")(app);

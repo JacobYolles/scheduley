@@ -1,8 +1,14 @@
+
+html,body{
+  height: 100%
+}
+
 .list-group-item {
   line-height: 2.5;
 }
 .card-header {
-  background-color:yellowgreen;
+  color: white;
+  background-color: #558C89;
 }
 
 
@@ -12,18 +18,38 @@
 
 .card {
   background-color: #75afad;
+  
 }
 
-.card-title cardhead {
-  background-color: cadetblue
-}
-#Brian {
-  color: lightseagreen;
+.list-group-item {
+  background-color: #f0f0ee;
 }
 
 body {
   background-color: #f0f0ee;
 }
-/* .container {
-  background-color: #f0f0ee;
-} */
+.card-title {
+  color: white;
+}
+.card-text {
+  color: white;
+}
+
+.list-group-item {
+  color:	#808080;
+}
+
+.linkSpace {
+  margin-right: 7px;
+  margin-left: 7px;
+}
+
+
+
+
+
+.container {
+  max-height: 150%;
+  
+  }
+

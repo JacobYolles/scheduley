@@ -18,6 +18,7 @@ module.exports = function(app) {
     db.Hair.findOne({ where: { id: req.params.id } }).then(function(dbHairs) {
       // res.render service page.
       res.render("hairservice", {
+        
         hair: dbHairs
       });
     });
