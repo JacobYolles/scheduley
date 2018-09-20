@@ -32,6 +32,14 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/hair/hair/:id", function(req, res) {
+    db.Hair.findOne({ where: { id: req.params.id } }).then(function(dbHairs) {
+   
+    res.render("confirmation", {
+      hair: dbHairs
+    })
+  })
+  })
   
 
   // res.render("confirmation", {
