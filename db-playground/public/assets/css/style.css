@@ -184,6 +184,7 @@ html,body{
   .card {
 	/* background-color: #75afad; */
 	background-color: #9ab9d7;
+	min-height: 362px;
 	/* margin: 0 auto; 
   float: none; 
 	margin-bottom: 10px;  */
@@ -258,6 +259,10 @@ html,body{
 		/* color: #3280ba; */
 	}
 
+
+	/* .py-3 {
+    padding-bottom: 0rem!important;
+} */
 
 	.page-footer {
 		margin-top: 5em;
