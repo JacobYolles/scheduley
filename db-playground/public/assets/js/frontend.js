@@ -87,7 +87,10 @@ $(function () {
             maxSimul
         }
 
-        $.post('clientaddservice', serviceData);
+        $.post('clientaddservice', serviceData).then(response => {
+            confirmAddService(response)
+            console.log('frontend resp', response)
+        });
     });
 
     function postCustomer (name, phone, comment) {
@@ -106,6 +109,15 @@ $(function () {
             time
         }
         $.post('/appointment', appointmentData);
+    }
+
+    function confirmAddService(data) {
+        console.log(data)
+        let name = data.name
+        
+        let message =$('<p>').text('Service successfully added: ' + name)
+        let viewServices = "<a href='/services'>View your currently offered services</a>";
+        $('#confirm-add-service').append(message, viewServices);
     }
 })
 

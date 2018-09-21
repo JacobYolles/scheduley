@@ -66,8 +66,10 @@ module.exports = function (app) {
     app.get('/services', (req, res) => {
         db.Service.findAll({
             include: [db.Event]
-        }).then(data => {
-            res.json(data);
+        }).then(services => {
+            // console.log(services);
+            // res.json(services);
+            res.render('servicesoffered', { services })
         })
     })
 }
