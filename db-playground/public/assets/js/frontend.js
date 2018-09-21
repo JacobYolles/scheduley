@@ -1,6 +1,7 @@
 
 $(function () {
     let serviceSelected;
+    let serviceIdSelected;
     let timeSelected;
     $(document).on('click', '#submit-date', function () {
         $('#date-error').empty();
@@ -35,6 +36,7 @@ $(function () {
     })
     $('.service-select').on('click', function () {
         serviceSelected = $(this).attr('data-name');
+        serviceIdSelected = $(this).attr('data-id');
         let dateInputLabel = $("<label for='date-input'>Please select a date:</label>");
         let dateInput = $("<input type='text' name='date-input' id='date-input' />");
         let submitDateBtn = $("<button id='submit-date'>Submit</button>");
@@ -67,7 +69,7 @@ $(function () {
             let phone = phoneField.val().trim();
             let comment = commentField.val().trim();
             postCustomer(name, phone, comment);
-            postAppointment(serviceSelected, timeSelected);
+            postAppointment(serviceSelected, serviceIdSelected, timeSelected);
             console.log('end of time select');
         })
     })
@@ -92,7 +94,6 @@ $(function () {
 
         $.post('clientaddservice', serviceData).then(response => {
             confirmAddService(response)
-            console.log('frontend resp', response)
         });
     });
 
@@ -106,14 +107,15 @@ $(function () {
         $.post('/customer', userData)
     }
 
-    function postAppointment (service, time) {
+    function postAppointment (service, serviceId, time) {
         let appointmentData =  {
             service, 
+            serviceId,
             time
         }
         $.post('/appointment', appointmentData).then(response => {
             $('#main-input').empty();
-            let date = moment.tz(response.start, 'utc').format('dddd, MMMM Do, hh:mm');
+            let date = moment.tz(response.start, 'utc').format('dddd, MMMM Do, hh:mm a');
             let event = response.event;
             let thanksMsg = $('<p>').text('Thanks! Your appointment for ' + event + ' has been scheduled for ' + date + '.')
             let scheduleAnother = $("<a href='/'>Schedule another appointment</a>");

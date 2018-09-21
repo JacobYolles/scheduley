@@ -87,11 +87,14 @@ module.exports = function (app) {
         db.Service.findAll({
             include: [db.Event]
         }).then(services => {
-            // console.log(services);
-            // res.json(services);
+            services.forEach(service => {
+                if(service.Events.length !== 0) {
+                    service.Events.forEach(event => {
+                        event.start = moment.tz(event.start, 'utc').format('ddd, MMM DD YYYY, hh:mm a')
+                    })
+                }
+            })
             res.render('servicesoffered', { services })
         })
     })
 }
-
-              //  date: '2018-09-18T00:00:00.000Z'

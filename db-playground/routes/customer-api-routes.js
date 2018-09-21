@@ -5,6 +5,7 @@ module.exports = function(app) {
     app.post('/appointment', (req, res) => {
         let service = req.body.service;
         let time = req.body.time;
+        let serviceId = req.body.serviceId
 
         db.Service.findOne({
             where: {
@@ -19,9 +20,9 @@ module.exports = function(app) {
                 DayDay: dateOnly, 
                 event: service, 
                 start: startTime,
-                end: endTime
+                end: endTime, 
+                ServiceId: serviceId
             }).then(data => {
-                console.log('post data', data);
                 res.json(data);
                 // res.render('confirmation', data);
             })
