@@ -1,6 +1,11 @@
 let store = {
     state: {
     timeslots: [],
+    day: [
+        "08:00", "08"
+
+    ],
+    week: []
     },
     mutations: {
         setTimeslots(payload) {
@@ -9,8 +14,11 @@ let store = {
         }, 
         removeTimes(index) {
             store.state.timeslots[0].splice(index, 1);
-
+        }, 
+        addWeek (payload) {
+            store.state.week.push(payload);
         }
+
     },
     getters: {
         getTimeslots() {
@@ -19,3 +27,4 @@ let store = {
     }
 }
 module.exports = store;
+

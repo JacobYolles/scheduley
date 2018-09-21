@@ -11,8 +11,10 @@ let computed = {
         while (start.isBefore(aWeekFromStart)) {
             let formattedDay = start.format('YYYY-MM-DD')
             week.push(formattedDay);
+            store.mutations.addWeek(formattedDay);
             start.add(1, 'd');
         }
+        store.mutations
         return week;
     },
     getHours: function (datesObject) {
@@ -36,7 +38,8 @@ let computed = {
                 }
             })
         })
-        let timeslots = this.getAvailable(hours)
+        let timeslots = this.getAvailable(hours);
+        console.log('timeslots in getHours', timeslots)
         store.mutations.setTimeslots(timeslots);
     },
     getAvailable: function (hours) {
@@ -55,8 +58,10 @@ let computed = {
     compareSchedules(timeslots, service) {
         let serviceDuration = service.duration;
         let slots = store.getters.getTimeslots();
-        // console.log('slots before', slots)
         let availableTimes = [];
+        if (service.Events.length === 0) {
+            availableTimes = timeslots;
+        }
 
 
         timeslots.forEach((time, index) => {
@@ -71,9 +76,10 @@ let computed = {
                     timeStart.isSame(eventStart)) {
                     console.log('conflict!', timeStart, index)
                 }
-                else availableTimes.push(moment(timeStart).format('dddd, MMMM Do, h:mm a'));
+                else availableTimes.push(moment(timeStart));
             })
         })
+        console.log('avail times in comparesched', availableTimes)
         return availableTimes;
     }
 }

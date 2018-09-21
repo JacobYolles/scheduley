@@ -5,10 +5,9 @@
                 <div class="card confCard" style="width: 40rem; height: auto;">
                     <div class="card-body">
                         <h5 class="card-title conf"><span class="conf">Thank you for scheduling your appointment!</span></h5>
-                        <p class="card-text">Your appointment for your {{hair.service_provided}}
+                        <p class="card-text">Your appointment has been scheduled {{customer.name}} 
                             is scheduled for {{hair.days_provided}}
-                            The total for your appointment will be {{hair.current_price}}
-                            We hope that you enjoy, and {{hair.small_bio}}
+                            If any issues arrise we will call you at {{phonenumber}}
                             See you soon!</p>
 
 
@@ -20,6 +19,21 @@
 </div>
 
 
+{{!-- module.exports = function (sequelize, DataTypes) {
+    var Customer = sequelize.define('Customer', {
+        name: DataTypes.STRING, 
+        phone: DataTypes.STRING,
+        comment: DataTypes.STRING
+    })
+    Customer.associate = function(models) {
+        Customer.belongsTo(models.Event, {
+            foreignKey: {
+                allowNull: true
+            }
+        })
+    }
+    return Customer;
+} --}}
 
 
 {{!-- <p> Thank you for scheduling your appointment!</p>

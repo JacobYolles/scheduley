@@ -23,15 +23,28 @@ Delete usage of each and find a substitute --}}
           <h5 class="card-title cardhead">Please review session details:</h5>
           <p class="card-text"></p>
           <ul id="hair-list" class="list-group">
-            {{#each hair}}
-            {{#if this.id}}
+
+
+  
+     
+
+                <li data-id="{{this.id}}" class="list-group-item">
+                  <a href="hair/{{hair.id}}">{{hair.service_provided}}</a>
+                  <a href="hair/{{hair.id}}">{{hair.small_bio}}</a>
+               <a href="hair/{{hair.id}}">{{hair.current_price}}</a>
+                </li>
+              
+              
+                
+               
+      {{!-- {{#each hair}}
             <li data-id="{{this.id}}" class="list-group-item">
               <a href="hair/{{this.id}}">{{this.service_provided}}</a>
               <a href="hair/{{this.id}}">{{this.small_bio}}</a>
               <a href="hair/{{this.id}}">{{this.current_price}}</a>
             </li>
-            {{/if}}
-            {{/each}}
+        {{/hair}} --}}
+  
           </ul>
         </div>
       </div>
