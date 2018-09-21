@@ -193,3 +193,7 @@ ul {
     width: 200px;
     margin-right: 20px;
 }
+
+.error {
+	color: red;
+}

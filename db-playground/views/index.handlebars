@@ -13,7 +13,7 @@
                         <label>Please Select a Service to see available times</label>
                         <ul>
                             {{#each services}}
-                            <li><button data-name='{{this.name}}' id='button-{{this.name}}' class='service-select'>{{this.name}}</button></li>
+                            <li><button data-name='{{this.name}}' data-id='{{this.id}}' id='button-{{this.name}}' class='service-select'>{{this.name}}</button></li>
                             {{/each}}
                         </ul>
                     </div>

@@ -2,19 +2,19 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/style-2.css">
 <h1>Your services offered</h1>
+<a href='/addservice'>Add a service</a>
 <hr>
 <div id='#client-services'>
     <ul>
         {{#each services}}
-        <li><span style='font-weight:bold'>{{this.name}}</span><br>Duration: {{this.duration}}<br>
+        <li><h3>{{this.name}}</h3><br>Duration: {{this.duration}} min<br>
             {{#if this.Events}}
             Upcoming Scheduled:
             <p>
-            {{#each this.Events}}
-           <li>{{start}}</li>
+            {{#each this.Events}}</p>
+           {{start}}
             {{/each}}
             {{/if}}
-            </p>
             <hr>
         </li>
         {{/each}}

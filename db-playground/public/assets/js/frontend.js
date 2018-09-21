@@ -1,6 +1,7 @@
 
 $(function () {
     let serviceSelected;
+    let serviceIdSelected;
     let timeSelected;
     $(document).on('click', '#submit-date', function () {
         $('#date-error').empty();
@@ -35,6 +36,7 @@ $(function () {
     })
     $('.service-select').on('click', function () {
         serviceSelected = $(this).attr('data-name');
+        serviceIdSelected = $(this).attr('data-id');
         let dateInputLabel = $("<label for='date-input'>Please select a date:</label>");
         let dateInput = $("<input type='text' name='date-input' id='date-input' />");
         let submitDateBtn = $("<button id='submit-date'>Submit</button>");
@@ -58,16 +60,28 @@ $(function () {
         let commentField = $("<textarea id='comment' class='customer-input-field' placeholder='Comment'>");
         let submitInputBtn = $("<button id='submit-input' class='customer-input-field'>Submit</button>");
         let orStartOver = $("<a href='/'>or start over</a>");
+        let errorDiv = $("<div>").addClass('error');
         $('#customer-input').css('border', '1px solid #ccc');
         $('#customer-input').append(heading, reminderSvc, reminderTime, nameField, phoneField, commentField, submitInputBtn, orStartOver);
        
         $('#submit-input').on('click', function() {
-         
             let name = nameField.val().trim();
+            if (!name) {
+                errorDiv.empty();
+                errorDiv.text('Please enter your name.')
+                $('#customer-input').append(errorDiv);
+                return;
+            }
             let phone = phoneField.val().trim();
+            if (!phone) {
+                errorDiv.empty();
+                errorDiv.text('Please enter your phone.')
+                $('#customer-input').append(errorDiv);
+                return;
+            }
             let comment = commentField.val().trim();
             postCustomer(name, phone, comment);
-            postAppointment(serviceSelected, timeSelected);
+            postAppointment(serviceSelected, serviceIdSelected, timeSelected);
             console.log('end of time select');
         })
     })
@@ -81,7 +95,15 @@ $(function () {
     })
 
     $('#add-service-button').on('click', function() {
+        let errorDiv = $("<div>").addClass('error');
+        errorDiv.empty();
         let svcName = $('#add-service-name').val().trim();
+            if (!svcName) {
+                errorDiv.empty();
+                errorDiv.text('Please enter a service name.')
+                $('#add-service').append(errorDiv);
+                return;
+            }
         let svcDur = $('#add-service-duration').val().trim();
         let maxSimul = $('#add-service-number').val().trim();
         let serviceData = {
@@ -92,7 +114,6 @@ $(function () {
 
         $.post('clientaddservice', serviceData).then(response => {
             confirmAddService(response)
-            console.log('frontend resp', response)
         });
     });
 
@@ -106,14 +127,15 @@ $(function () {
         $.post('/customer', userData)
     }
 
-    function postAppointment (service, time) {
+    function postAppointment (service, serviceId, time) {
         let appointmentData =  {
             service, 
+            serviceId,
             time
         }
         $.post('/appointment', appointmentData).then(response => {
             $('#main-input').empty();
-            let date = moment.tz(response.start, 'utc').format('dddd, MMMM Do, hh:mm');
+            let date = moment.tz(response.start, 'utc').format('dddd, MMMM Do, hh:mm a');
             let event = response.event;
             let thanksMsg = $('<p>').text('Thanks! Your appointment for ' + event + ' has been scheduled for ' + date + '.')
             let scheduleAnother = $("<a href='/'>Schedule another appointment</a>");
@@ -126,9 +148,11 @@ $(function () {
         console.log(data)
         let name = data.name
         
+        $('#add-service').empty();
         let message =$('<p>').text('Service successfully added: ' + name)
         let viewServices = "<a href='/services'>View your currently offered services</a>";
-        $('#confirm-add-service').append(message, viewServices);
+        let addAnotherService = "<p><a href='/addservice'>Add another service</a></p>"
+        $('#confirm-add-service').append(message, viewServices, addAnotherService);
     }
 })
 
