@@ -17,6 +17,26 @@ module.exports = function (app) {
         }))
     })
 
+    app.get("/confirmation/:id", function(req, res) {
+        db.Customer.findOne({ where: {id: req.params.id} }).then(function(dbCustomer) {
+            res.render("confirmation", {
+              customer: db.Customer
+            });
+          });
+    })
+
+//   app.get("/confirmation", function(req, res) {
+//     db.Customer.findAll({}).then(function(dbCustomer) {
+//         res.json(dbCustomer);
+//       });
+// })
+
+    app.get("/api/customer", function(req, res) {
+        db.Customer.findAll({}).then(function(dbCustomer) {
+          res.json(dbCustomer);
+        });
+      });
+
     app.get('/all', (req, res) => {
         db.Day.findAll({
             include: [db.Event]
@@ -39,7 +59,7 @@ module.exports = function (app) {
             computed.getHours(dbDates);
             console.log('getting hours')
         }))
-
+    
     })
 
     app.get('/available', (req, res) => {

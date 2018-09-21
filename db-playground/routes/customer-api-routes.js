@@ -27,6 +27,9 @@ module.exports = function(app) {
         })
     })
 
+
+    
+
     app.post('/customer', (req, res) => {
         let name = req.body.name;
         let phone = req.body.phone; 

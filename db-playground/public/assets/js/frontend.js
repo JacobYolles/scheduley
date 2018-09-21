@@ -55,11 +55,13 @@ $(function () {
         let nameField = $("<input type='text' id='name-input' class='customer-input-field' placeholder='Name (required)'>");
         let phoneField = $("<input type='tel' id='phone-input' class='customer-input-field' placeholder='Phone (required)'>");
         let commentField = $("<textarea id='comment' class='customer-input-field' placeholder='Comment'>");
-        let submitInputBtn = $("<button id='submit-input' class='customer-input-field'>Schedule</button>");
+        let submitInputBtn = $("<a href='/confirmation/:id'> <button id='submit-input' class='customer-input-field'>Submit</button> </a>");
         let orStartOver = $("<a href='/'>or start over</a>");
         $('#customer-input').css('border', '1px solid #ccc');
         $('#customer-input').append(heading, reminderSvc, reminderTime, nameField, phoneField, commentField, submitInputBtn, orStartOver);
+       
         $('#submit-input').on('click', function() {
+         
             let name = nameField.val().trim();
             let phone = phoneField.val().trim();
             let comment = commentField.val().trim();
