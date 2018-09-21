@@ -47,6 +47,8 @@ module.exports = function (app) {
       name: svcName,
       max_simul: maxSimul,
       duration: duration
+    }).then(data => {
+      res.json(data);
     })
   })
 };

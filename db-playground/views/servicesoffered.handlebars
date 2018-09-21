@@ -1,0 +1,19 @@
+<h1>Your services offered</h1>
+<hr>
+<div id='#client-services'>
+    <ul>
+        {{#each services}}
+        <li><span style='font-weight:bold'>{{this.name}}</span><br>Duration: {{this.duration}}<br>
+            {{#if this.Events}}
+            Upcoming Scheduled:
+            <p>
+            {{#each this.Events}}
+           <li>{{start}}</li>
+            {{/each}}
+            {{/if}}
+            </p>
+            <hr>
+        </li>
+        {{/each}}
+    </ul>
+</div>
