@@ -46,6 +46,7 @@ $(function () {
     });
 
     $(document).on('click', '.time-select', function () {
+        $('#appointment-select').empty();
         timeSelected = $(this).attr('data-date');
         console.log(timeSelected);
         let formattedTime = moment.tz(timeSelected, 'utc').format('dddd, MMMM Do, h:mm a');
