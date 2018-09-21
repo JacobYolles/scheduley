@@ -59,6 +59,9 @@ let computed = {
         let serviceDuration = service.duration;
         let slots = store.getters.getTimeslots();
         let availableTimes = [];
+        if (service.Events.length === 0) {
+            availableTimes = timeslots;
+        }
 
 
         timeslots.forEach((time, index) => {
