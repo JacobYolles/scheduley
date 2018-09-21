@@ -1,32 +1,38 @@
-    <link rel="stylesheet" type="text/css" href="/assets/css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/skeleton.css">
-    <link rel="stylesheet" type="text/css" href="/assets/css/style-2.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/normalize.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/skeleton.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/style-2.css">
 <h1>Scheduley</h1>
+<h2>Make an appointment.</h2>
 <hr>
 <div class="container">
     <div id='main-input'>
-        <div class='row'>
-            <div class='four columns'>
-                <div id='service'>
-                    <label>Please Select a Service</label>
-                    <ul>
-                        {{#each services}}
-                        <li><button data-name='{{this.name}}' id='button-{{this.name}}' class='service-select'>{{this.name}}</button></li>
-                        {{/each}}
-                    </ul>
+        <div id='appointment-select'>
+            <div class='row'>
+                <div class='four columns'>
+                    <div id='service'>
+                        <label>Please Select a Service to see available times</label>
+                        <ul>
+                            {{#each services}}
+                            <li><button data-name='{{this.name}}' id='button-{{this.name}}' class='service-select'>{{this.name}}</button></li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            <div id='date'>
-                {{!-- <label for='date-input'>Please select a date:</label>
-                <input type='text' name='date-input' id='date-input' />
-                <button id='submit-date'>Submit</button>
-                <div id='date-error'></div> --}}
+                <div class='four columns'>
+
+                    <div id='date'>
+                        {{!-- <label for='date-input'>Please select a date:</label>
+                        <input type='text' name='date-input' id='date-input' />
+                        <button id='submit-date'>Submit</button>
+                        <div id='date-error'></div> --}}
+                    </div>
+                </div>
+                <div class='four columns'>
+                    <div id='available-times'></div>
+                </div>
             </div>
         </div>
         <div class='row'>
-            <div class='four columns'>
-                <div id='available-times'></div>
-            </div>
             <div class='eight columns'>
                 <div id='customer-input'>
 
