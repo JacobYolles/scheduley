@@ -154,6 +154,8 @@ html,body {
 	body {
 		font-family: 'Montserrat', sans-serif; 
 		font-weight:200;
+		background-color: #A9A9A9;
+		/* background-color: #696969; */
 	}
 	
 .h3Head {
@@ -198,28 +200,26 @@ html,body {
 	}
   
   .list-group-item {
-	background-color: #f0f0ee;
+		background-color: #f0f0ee;
   }
   
-  body {
-	background-color: #f0f0ee;
-  }
+
   .card-title {
-	color: white;
+		color: white;
 	/* color: #3280ba; */
   }
   .card-text {
-	color: white;
+		color: white;
 	/* color: #3280ba; */
   }
   
   .list-group-item {
-	color:  #808080;
+		color:  #808080;
   }
   
   .linkSpace {
-	margin-right: 7px;
-	margin-left: 7px;
+		margin-right: 7px;
+		margin-left: 7px;
 	}
 	
 	.conf {
