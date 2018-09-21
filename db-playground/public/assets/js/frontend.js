@@ -55,7 +55,7 @@ $(function () {
         let nameField = $("<input type='text' id='name-input' class='customer-input-field' placeholder='Name (required)'>");
         let phoneField = $("<input type='tel' id='phone-input' class='customer-input-field' placeholder='Phone (required)'>");
         let commentField = $("<textarea id='comment' class='customer-input-field' placeholder='Comment'>");
-        let submitInputBtn = $("<a href='/confirmation/:id'> <button id='submit-input' class='customer-input-field'>Submit</button> </a>");
+        let submitInputBtn = $("<button id='submit-input' class='customer-input-field'>Submit</button>");
         let orStartOver = $("<a href='/'>or start over</a>");
         $('#customer-input').css('border', '1px solid #ccc');
         $('#customer-input').append(heading, reminderSvc, reminderTime, nameField, phoneField, commentField, submitInputBtn, orStartOver);
@@ -110,7 +110,15 @@ $(function () {
             service, 
             time
         }
-        $.post('/appointment', appointmentData);
+        $.post('/appointment', appointmentData).then(response => {
+            $('#main-input').empty();
+            let date = moment.tz(response.start, 'utc').format('dddd, MMMM Do, hh:mm');
+            let event = response.event;
+            let thanksMsg = $('<p>').text('Thanks! Your appointment for ' + event + ' has been scheduled for ' + date + '.')
+            let scheduleAnother = $("<a href='/'>Schedule another appointment</a>");
+            $('#main-input').append(thanksMsg, scheduleAnother);
+            console.log(response)
+        });
     }
 
     function confirmAddService(data) {

@@ -22,7 +22,8 @@ module.exports = function(app) {
                 end: endTime
             }).then(data => {
                 console.log('post data', data);
-                res.render('confirmation', data);
+                res.json(data);
+                // res.render('confirmation', data);
             })
         })
     })
