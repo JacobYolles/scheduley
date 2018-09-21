@@ -25,11 +25,6 @@ module.exports = function (app) {
           });
     })
 
-//   app.get("/confirmation", function(req, res) {
-//     db.Customer.findAll({}).then(function(dbCustomer) {
-//         res.json(dbCustomer);
-//       });
-// })
 
     app.get("/api/customer", function(req, res) {
         db.Customer.findAll({}).then(function(dbCustomer) {
@@ -89,8 +84,11 @@ module.exports = function (app) {
         }).then(services => {
             services.forEach(service => {
                 if(service.Events.length !== 0) {
-                    service.Events.forEach(event => {
+                    service.Events.forEach((event, index) => {
+                        if (moment().isBefore(event.start)) 
                         event.start = moment.tz(event.start, 'utc').format('ddd, MMM DD YYYY, hh:mm a')
+                        else service.Events.splice(index, 1);
+                        
                     })
                 }
             })
